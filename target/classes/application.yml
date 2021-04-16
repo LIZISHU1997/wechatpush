@@ -1,0 +1,54 @@
+# �˿ڣ�8080
+server:
+  port: 8080
+
+spring:
+  # Redis ������Ϣ
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password:
+  # ���ݿ� ������Ϣ
+  datasource:
+    url: jdbc:mysql://localhost:3306/tenement?allowMultiQueries=true&useUnicode=true&characterEncoding=utf8&useTimezone=true&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    initialSize: 5
+    minIdle: 20
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+
+# ��΢����ص�����
+wechat:
+  # ΢�Ź��ںŵ�Ӧ��id
+  appId: wx04e6c5089bb29366
+  # ��Կ
+  secret: 6f2345512edb31556a21e9715ef3d73a
+  # ��ȡ����access_token�Ľӿ�
+  accessTokenUrl:  https://api.weixin.qq.com/cgi-bin/token
+  # �����˵��Ľӿ�
+  menuUrl: https://api.weixin.qq.com/cgi-bin/menu/create
+  # ͨ��UID���ƻ�ȡ�û���Ϣ�Ľӿ�
+  userInfoUrl: https://api.weixin.qq.com/cgi-bin/user/info
+  # ��ҳ��Ȩʱ��ͨ��code��ȡaccess_token��openid�Ľӿ�
+  loginTokenUrl:  https://api.weixin.qq.com/sns/oauth2/access_token
+  # ����access_token(�ǻ���access_token)��openid��ȡ�û���Ϣ�Ľӿ�
+  loginInfoUrl: https://api.weixin.qq.com/sns/userinfo
+  # ����ģ����Ϣ�Ľӿ�
+  templateMsgUrl: https://api.weixin.qq.com/cgi-bin/message/template/send
+
+mybatis:
+  # ɨ����µ���
+  type-aliases-package: com/lizishu/wechat/wechatpush
+  # ɨ��SQLӳ���ļ�
+  mapper-locations: mapper/**/*.xml
