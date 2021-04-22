@@ -1,14 +1,14 @@
-# ¶Ë¿Ú£¬8080
+# ç«¯å£ï¼Œ8080
 server:
   port: 8080
 
 spring:
-  # Redis Á¬½ÓĞÅÏ¢
+  # Redis è¿æ¥ä¿¡æ¯
   redis:
     host: 127.0.0.1
     port: 6379
     password:
-  # Êı¾İ¿â Á¬½ÓĞÅÏ¢
+  # æ•°æ®åº“ è¿æ¥ä¿¡æ¯
   datasource:
     url: jdbc:mysql://localhost:3306/tenement?allowMultiQueries=true&useUnicode=true&characterEncoding=utf8&useTimezone=true&serverTimezone=GMT%2B8
     username: root
@@ -28,27 +28,27 @@ spring:
     poolPreparedStatements: true
     maxPoolPreparedStatementPerConnectionSize: 20
 
-# ÓëÎ¢ĞÅÏà¹ØµÄÅäÖÃ
+# ä¸å¾®ä¿¡ç›¸å…³çš„é…ç½®
 wechat:
-  # Î¢ĞÅ¹«ÖÚºÅµÄÓ¦ÓÃid
+  # å¾®ä¿¡å…¬ä¼—å·çš„åº”ç”¨id
   appId: wx04e6c5089bb29366
-  # ÃÜÔ¿
+  # å¯†é’¥
   secret: 6f2345512edb31556a21e9715ef3d73a
-  # »ñÈ¡»ù´¡access_tokenµÄ½Ó¿Ú
+  # è·å–åŸºç¡€access_tokençš„æ¥å£
   accessTokenUrl:  https://api.weixin.qq.com/cgi-bin/token
-  # ´´½¨²Ëµ¥µÄ½Ó¿Ú
+  # åˆ›å»ºèœå•çš„æ¥å£
   menuUrl: https://api.weixin.qq.com/cgi-bin/menu/create
-  # Í¨¹ıUID»úÖÆ»ñÈ¡ÓÃ»§ĞÅÏ¢µÄ½Ó¿Ú
+  # é€šè¿‡UIDæœºåˆ¶è·å–ç”¨æˆ·ä¿¡æ¯çš„æ¥å£
   userInfoUrl: https://api.weixin.qq.com/cgi-bin/user/info
-  # ÍøÒ³ÊÚÈ¨Ê±£¬Í¨¹ıcode»ñÈ¡access_tokenºÍopenidµÄ½Ó¿Ú
+  # ç½‘é¡µæˆæƒæ—¶ï¼Œé€šè¿‡codeè·å–access_tokenå’Œopenidçš„æ¥å£
   loginTokenUrl:  https://api.weixin.qq.com/sns/oauth2/access_token
-  # ¸ù¾İaccess_token(·Ç»ù´¡access_token)ºÍopenid»»È¡ÓÃ»§ĞÅÏ¢µÄ½Ó¿Ú
+  # æ ¹æ®access_token(éåŸºç¡€access_token)å’Œopenidæ¢å–ç”¨æˆ·ä¿¡æ¯çš„æ¥å£
   loginInfoUrl: https://api.weixin.qq.com/sns/userinfo
-  # ·¢ËÍÄ£°åÏûÏ¢µÄ½Ó¿Ú
+  # å‘é€æ¨¡æ¿æ¶ˆæ¯çš„æ¥å£
   templateMsgUrl: https://api.weixin.qq.com/cgi-bin/message/template/send
 
 mybatis:
-  # É¨Ãè°üÏÂµÄÀà
-  type-aliases-package: com/lizishu/wechat/wechatpush
-  # É¨ÃèSQLÓ³ÉäÎÄ¼ş
+  # æ‰«æåŒ…ä¸‹çš„ç±»
+  type-aliases-package: com/study/wang/tenement
+  # æ‰«æSQLæ˜ å°„æ–‡ä»¶
   mapper-locations: mapper/**/*.xml
